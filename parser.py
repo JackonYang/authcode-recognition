@@ -10,4 +10,14 @@ def recog(filename, threshold = 140):
 
 if __name__ == '__main__':
     import sys
-    print recog(sys.argv[1])
+
+    if len(sys.argv) == 1:
+        filename = raw_input(u'picture filename: ')
+        filenames = [filename]
+    elif len(sys.argv) == 2:
+        filenames = [sys.argv[1]]
+    else:
+        filenames = sys.argv[1:]
+
+    for f in filenames:
+        print 'res:%s, filename=%s' % (recog(f), f)
