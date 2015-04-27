@@ -1,7 +1,5 @@
-# Django files
-media/*
-output/*
-db.sqlite3
+img/download/*
+result.html
 
 base/local_settings.py
 
