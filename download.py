@@ -3,16 +3,16 @@ import os
 import socket
 from httplib2 import Http
 
-output_dir = 'img/download'
+download_dir = 'img/download'
 
-if not os.path.exists(output_dir):
-    os.mkdir(output_dir)
+if not os.path.exists(download_dir):
+    os.mkdir(download_dir)
 
-start_idx = len(os.listdir(output_dir))
+start_idx = len(os.listdir(download_dir))
 
 def get_name():
-    file_seq = len(os.listdir(output_dir))
-    return os.path.join(output_dir, '%s.jpg' % file_seq)
+    file_seq = len(os.listdir(download_dir))
+    return os.path.join(download_dir, '%s.jpg' % file_seq)
 
 def req(url, method='POST'):
     h = Http(timeout=2)
